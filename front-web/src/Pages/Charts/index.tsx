@@ -59,7 +59,7 @@ const Charts = () => {
                             options={barOptions}
                             type="bar"
                             width="600"
-                            height="350"
+                            height="550"
                             series={[{ data: barChartData }]} />
                     </div>
                 </div>
