@@ -13,7 +13,7 @@ type PieChartData = {
 
 type BarChartData = {
     x: string;
-    y: string;
+    y: number;
 }
 
 const initialPieData = {
@@ -24,7 +24,7 @@ const initialPieData = {
 const BASE_URL = 'https://sds1-franciscoviana.herokuapp.com';
 
 const Charts = () => {
-    const [barChatData, setBarChatData] = useState<BarChartData[]>([]);
+    const [barChartData, setBarChartData] = useState<BarChartData[]>([]);
     const [platformData, setPlatformData] = useState<PieChartData>(initialPieData);
     const [genderData, setGenderData] = useState<PieChartData>(initialPieData);
 
@@ -34,7 +34,7 @@ const Charts = () => {
             const gamesResponse = await axios.get(`${BASE_URL}/games`);
 
             const barData = buildBarSeries(gamesResponse.data, recordsResponse.data.content);
-            setBarChatData(barData);
+            setBarChartData(barData);
 
             const platformChartData = getPlatformChartData(recordsResponse.data.content);
             setPlatformData(platformChartData);
@@ -60,7 +60,7 @@ const Charts = () => {
                             type="bar"
                             width="900"
                             height="650"
-                            series={[{ data: barChatData }]} />
+                            series={[{ data: barChartData }]} />
                     </div>
                 </div>
                 <div className="charts">
