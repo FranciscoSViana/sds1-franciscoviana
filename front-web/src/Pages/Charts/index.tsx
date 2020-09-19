@@ -70,7 +70,7 @@ const Charts = () => {
                             options={{ ...pieOptions, labels: platformData?.labels }}
                             type="donut"
                             series={platformData?.series}
-                            width="350"
+                            width="250"
                         />
                     </div>
                     <div className="gender-chart">
@@ -79,7 +79,7 @@ const Charts = () => {
                             options={{ ...pieOptions, labels: genderData?.labels }}
                             type="donut"
                             series={genderData?.series}
-                            width="350"
+                            width="250"
                         />
                     </div>
                 </div>
